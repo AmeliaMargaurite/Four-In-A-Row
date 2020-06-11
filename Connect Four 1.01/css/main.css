@@ -35,7 +35,12 @@
 }
 
 #game--board path {
-  fill: green;
+  fill: #348F50;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#56B4D3), to(#348F50));
+  background: linear-gradient(to right, #56B4D3, #348F50);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .cell {
@@ -91,7 +96,29 @@
 .btn {
   width: 100px;
   height: 50px;
-  margin: 0.25rem 0;
+  background-image: #FC5C7D;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background-image: -webkit-gradient(linear, left top, right top, from(#6A82FB), to(#FC5C7D));
+  background-image: linear-gradient(to right, #6A82FB, #FC5C7D);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 900;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.btn:hover {
+  background-image: #FC5C7D;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#6A82FB), to(#FC5C7D));
+  background-image: linear-gradient(to top, #6A82FB, #FC5C7D);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 .arrows {
@@ -142,6 +169,20 @@
           align-items: center;
 }
 
+.discs.player-one, .discs.player-two {
+  -webkit-transition: -webkit-transform 3s;
+  transition: -webkit-transform 3s;
+  transition: transform 3s;
+  transition: transform 3s, -webkit-transform 3s;
+}
+
+.discs.player-one.dropped, .discs.player-two.dropped {
+  -webkit-transition: -webkit-transform 3s;
+  transition: -webkit-transform 3s;
+  transition: transform 3s;
+  transition: transform 3s, -webkit-transform 3s;
+}
+
 .banner {
   position: absolute;
   z-index: 40;
@@ -163,6 +204,8 @@
       -ms-flex-pack: center;
           justify-content: center;
   visibility: hidden;
+  color: white;
+  text-shadow: 2px 2px 5px black;
 }
 
 .banner.visible {
@@ -177,23 +220,39 @@
 }
 
 .win {
-  background: -webkit-gradient(linear, left top, left bottom, from(#979159), color-stop(9.38%, #D7C950), color-stop(39.58%, #F7E972), color-stop(59.38%, #F7E972), color-stop(93.23%, #B6AD62), to(#87814E)), -webkit-gradient(linear, left top, right top, from(rgba(165, 152, 40, 0.5)), color-stop(9.37%, rgba(215, 201, 80, 0.5)), color-stop(39.58%, rgba(247, 233, 114, 0.5)), color-stop(59.38%, rgba(247, 233, 114, 0.5)), color-stop(93.23%, rgba(182, 173, 98, 0.5)), to(rgba(154, 143, 46, 0.5)));
-  background: linear-gradient(180deg, #979159 0%, #D7C950 9.38%, #F7E972 39.58%, #F7E972 59.38%, #B6AD62 93.23%, #87814E 100%), linear-gradient(90deg, rgba(165, 152, 40, 0.5) 0%, rgba(215, 201, 80, 0.5) 9.37%, rgba(247, 233, 114, 0.5) 39.58%, rgba(247, 233, 114, 0.5) 59.38%, rgba(182, 173, 98, 0.5) 93.23%, rgba(154, 143, 46, 0.5) 100%);
+  background: #FDFC47;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#24FE41), to(#FDFC47));
+  background: linear-gradient(to right, #24FE41, #FDFC47);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .lose {
-  background: -webkit-gradient(linear, left top, left bottom, from(#97968D), color-stop(9.38%, #CDCCC5), color-stop(39.58%, #FAF8EB), color-stop(59.38%, #F9F7EC), color-stop(93.23%, #BDBCB7), to(#8E8D84));
-  background: linear-gradient(180deg, #97968D 0%, #CDCCC5 9.38%, #FAF8EB 39.58%, #F9F7EC 59.38%, #BDBCB7 93.23%, #8E8D84 100%);
+  background: #403B4A;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#E7E9BB), to(#403B4A));
+  background: linear-gradient(to right, #E7E9BB, #403B4A);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .player-one--welcome {
-  background: -webkit-gradient(linear, left top, left bottom, from(#975D59), color-stop(9.38%, #D75050), color-stop(39.58%, #F77A72), color-stop(59.38%, #F77272), color-stop(93.23%, #B66762), to(#874E4E)), -webkit-gradient(linear, left top, right top, from(rgba(165, 40, 40, 0.5)), color-stop(9.37%, rgba(215, 97, 80, 0.5)), color-stop(39.58%, rgba(247, 122, 114, 0.5)), color-stop(59.38%, rgba(247, 138, 114, 0.5)), color-stop(93.23%, rgba(182, 113, 98, 0.5)), to(rgba(154, 59, 46, 0.5)));
-  background: linear-gradient(180deg, #975D59 0%, #D75050 9.38%, #F77A72 39.58%, #F77272 59.38%, #B66762 93.23%, #874E4E 100%), linear-gradient(90deg, rgba(165, 40, 40, 0.5) 0%, rgba(215, 97, 80, 0.5) 9.37%, rgba(247, 122, 114, 0.5) 39.58%, rgba(247, 138, 114, 0.5) 59.38%, rgba(182, 113, 98, 0.5) 93.23%, rgba(154, 59, 46, 0.5) 100%);
+  background: #FF416C;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#FF4B2B), to(#FF416C));
+  background: linear-gradient(to right, #FF4B2B, #FF416C);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .player-two--welcome {
-  background: -webkit-gradient(linear, left top, left bottom, from(#596397), color-stop(9.38%, #5066D7), color-stop(39.58%, #727FF7), color-stop(59.37%, #728FF7), color-stop(93.23%, #6270B6), to(#4E5787));
-  background: linear-gradient(180deg, #596397 0%, #5066D7 9.38%, #727FF7 39.58%, #728FF7 59.37%, #6270B6 93.23%, #4E5787 100%);
+  background: #00B4DB;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#0083B0), to(#00B4DB));
+  background: linear-gradient(to right, #0083B0, #00B4DB);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 @media screen and (min-width: 768px) {
@@ -229,6 +288,9 @@
   }
   .banner {
     top: 300px;
+  }
+  .banner h3 {
+    font-size: 2rem;
   }
 }
 

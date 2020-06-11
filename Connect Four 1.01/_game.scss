@@ -29,7 +29,10 @@
       z-index: 20;
 
       path {
-          fill: green;
+          fill: #348F50;  /* fallback for old browsers */
+          background: -webkit-linear-gradient(to right, #56B4D3, #348F50);  /* Chrome 10-25, Safari 5.1-6 */
+          background: linear-gradient(to right, #56B4D3, #348F50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+          ;
       }
   }
   .cell {
@@ -79,7 +82,23 @@
 .btn {
     width: 100px;
     height: 50px;
-    margin: 0.25rem 0;
+    //margin: 0.25rem 0;
+    background-image: #FC5C7D;  /* fallback for old browsers */
+    background-image: -webkit-linear-gradient(to right, #6A82FB, #FC5C7D);  /* Chrome 10-25, Safari 5.1-6 */
+    background-image: linear-gradient(to right, #6A82FB, #FC5C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 900;
+    transition: all 1s ease-in-out;
+
+    &:hover {
+      background-image: #FC5C7D;  /* fallback for old browsers */
+      background-image: -webkit-linear-gradient(to top, #6A82FB, #FC5C7D);  /* Chrome 10-25, Safari 5.1-6 */
+      background-image: linear-gradient(to top, #6A82FB, #FC5C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      transition: all 1s ease-in-out;
+    }
+
 }
 
 .arrows {
@@ -117,4 +136,16 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.discs.player-one, .discs.player-two {
+  //opacity: 0;
+  //transform: translateY(50px);
+  transition: transform 3s;
+
+  &.dropped {
+    //opacity: 1;
+    //transform: translateY(0px);
+    transition: transform 3s;
+  }
 }
